@@ -13,6 +13,11 @@
     <title>Title</title>
 </head>
 <body>
-    <%=request.getAttribute("r")%>입니다.
+    <%=request.getAttribute("result")%>입니다.
+    ${result}<br >
+    ${names[0]}<br >
+    ${notice.id}<br >
+    ${param.n}<br >
+    ${param.n > 3}<br >
 </body>
 </html>

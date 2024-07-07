@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 @WebServlet("/spag")
 public class Spag extends HttpServlet {
@@ -25,7 +27,14 @@ public class Spag extends HttpServlet {
         else
             result = "짝수";
 
-        request.setAttribute("r", result);
+        String[] names = {"newlec", "dragon"};
+        request.setAttribute("names", names);
+        request.setAttribute("result", result);
+
+        Map<String, Object> notice = new HashMap<String, Object>();
+        notice.put("id", 1);
+        notice.put("title", "EL은 좋아요");
+        request.setAttribute("notice", notice);
         //redirect - 새로 요청시
         //foward  - 이어갈시
         RequestDispatcher dispatcher = request.getRequestDispatcher("spag.jsp");
