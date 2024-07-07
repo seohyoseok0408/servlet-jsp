@@ -10,21 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f53d5ab2-626e-4f92-822a-9f81f74cf54a" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/calculator.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/nana.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/spag.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/newlecture/web/Spag.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/note/정리.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/note/정리.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/com/newlecture/web/Add.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/com/newlecture/web/Add.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/com/newlecture/web/Add2.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/com/newlecture/web/Add2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/com/newlecture/web/Calc.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/com/newlecture/web/Calc.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/com/newlecture/web/Calc2.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/com/newlecture/web/Calc2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/com/newlecture/web/Calc3.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/com/newlecture/web/Calc3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/com/newlecture/web/CalcPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/com/newlecture/web/CalcPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/com/newlecture/web/Calculator.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/com/newlecture/web/Calculator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/com/newlecture/web/Nana.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/com/newlecture/web/Nana.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/com/newlecture/web/NoticeReg.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/com/newlecture/web/NoticeReg.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/com/newlecture/web/filter/CharacterEncodingFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/com/newlecture/web/filter/CharacterEncodingFilter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/spag.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/spag.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,8 +26,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -56,7 +45,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -204,7 +193,7 @@
       <workItem from="1720263960918" duration="260000" />
       <workItem from="1720264227078" duration="9525000" />
       <workItem from="1720279805065" duration="1097000" />
-      <workItem from="1720322913954" duration="15113000" />
+      <workItem from="1720322913954" duration="18567000" />
     </task>
     <servers />
   </component>
