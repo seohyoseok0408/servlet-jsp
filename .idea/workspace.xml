@@ -10,10 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f53d5ab2-626e-4f92-822a-9f81f74cf54a" name="변경" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/notice/list.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/newlecture/web/Spag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/newlecture/web/Spag.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/com/newlecture/web/Spag.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/com/newlecture/web/Spag.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/spag.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/spag.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,8 +25,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Jsp File" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -66,7 +65,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/hyo_0/OneDrive/문서/GitHub/study/servlet-jsp/src/main/webapp",
+    "last_opened_file_path": "C:/Users/hyo_0/OneDrive/문서/GitHub/study/servlet-jsp/src/main/webapp/notice",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -81,6 +80,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\hyo_0\OneDrive\문서\GitHub\study\servlet-jsp\src\main\webapp\notice" />
       <recent name="C:\Users\hyo_0\OneDrive\문서\GitHub\study\servlet-jsp\src\main\webapp" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -193,7 +193,7 @@
       <workItem from="1720263960918" duration="260000" />
       <workItem from="1720264227078" duration="9525000" />
       <workItem from="1720279805065" duration="1097000" />
-      <workItem from="1720322913954" duration="20598000" />
+      <workItem from="1720322913954" duration="22711000" />
     </task>
     <servers />
   </component>
