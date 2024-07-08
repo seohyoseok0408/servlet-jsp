@@ -9,7 +9,7 @@
     <meta charset="UTF-8">
     <title>공지사항목록</title>
     
-    <link href="/css/customer/layout.css" type="text/css" rel="stylesheet" />
+    <link href="../../css/customer/layout.css" type="text/css" rel="stylesheet" />
     <style>
     
         #visual .content-container{	
@@ -68,8 +68,8 @@
                         <h1 class="hidden">회원메뉴</h1>
                         <ul>
                             <li><a href="/index.html">HOME</a></li>
-                            <li><a href="/member/login.html">로그인</a></li>
-                            <li><a href="/member/agree.html">회원가입</a></li>
+                            <li><a href="/WEB-INF/view/member/login.html">로그인</a></li>
+                            <li><a href="/WEB-INF/view/member/agree.html">회원가입</a></li>
                         </ul>
                     </nav>
 
@@ -77,7 +77,7 @@
                         <h1 class="hidden">고객메뉴</h1>
                         <ul class="linear-layout">
                             <li><a href="/member/home"><img src="/images/txt-mypage.png" alt="마이페이지" /></a></li>
-                            <li><a href="/notice/list.html"><img src="/images/txt-customer.png" alt="고객센터" /></a></li>
+                            <li><a href="/WEB-INF/view/notice/list.html"><img src="/images/txt-customer.png" alt="고객센터" /></a></li>
                         </ul>
                     </nav>
 

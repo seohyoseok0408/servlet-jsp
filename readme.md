@@ -194,3 +194,13 @@ Dispatcher를 하나만 둬서, 실질적으로 서블릿을 하나만 만든다
 - `|| or`
 - `? :`  
   empty는 null이거나 빈문자열일 경우 true. 반대로 not empty 가능. 삼항연산자랑 엮으면 좋다.
+
+
+## View 페이지 은닉하기  
+원래 Contoller 실행 후 Model을 만든 뒤에 View 가 실행되야 하지만,  
+list.jsp인 View를 사용자가 직접 요청해서 볼 수 있기 때문에 막아야 한다.  
+
+WEB-INF : 사용자가 직접 요청할 수 없는 곳  
+WEB-INF 폴더 안에 View 페이지에 대한 내용들을 옮겨 넣는다.  
+물론, Controller의 disparcher경로도 수정해줘야 한다.  
+`request.getRequestDispatcher("/WEB-INF/view/notice/list.jsp").forward(request, response);`
