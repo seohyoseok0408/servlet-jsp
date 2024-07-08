@@ -1,23 +1,8 @@
-<%@ page import="java.sql.Connection" %>
-<%@ page import="java.sql.DriverManager" %>
-<%@ page import="java.sql.Statement" %>
-<%@ page import="java.sql.ResultSet" %>
+<%@ page import="com.newlecture.web.entity.Notice" %>
+<%@ page import="java.util.List" %>
 <!DOCTYPE html>
 <html>
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
-<%
-	String url = "jdbc:oracle:thin:@192.168.219.106:1521/ORCLPDB";
-	String sql = "SELECT * FROM NOTICE";
-
-	try {
-		Class.forName("oracle.jdbc.driver.OracleDriver");
-	} catch (ClassNotFoundException e) {
-		throw new RuntimeException(e);
-	}
-	Connection con = DriverManager.getConnection(url, "NEWLEC", "newlec");
-	Statement st = con.createStatement();
-	ResultSet rs = st.executeQuery(sql);
-%>
 
 <head>
     <title>코딩 전문가를 만들기 위한 온라인 강의 시스템</title>
@@ -189,17 +174,21 @@
 					</thead>
 					<tbody>
 
-					<% while (rs.next()){ %>
+					<%
+					List<Notice> list = (List<Notice>)request.getAttribute("list");
+					for(Notice n : list) {
+						pageContext.setAttribute("n", n);
+					%>
+
 					<tr>
-						<td><%=rs.getInt("ID")%></td>
-						<td class="title indent text-align-left"><a href="detail?id=<%=rs.getInt("ID")%>"><%=rs.getString("TITLE")%></a></td>
-						<td><%=rs.getString("WRITER_ID")%></td>
-						<td>
-							<%=rs.getDate("REGDATE")%>
-						</td>
-						<td><%=rs.getInt("HIT")%></td>
+						<td>${n.id}</td>
+						<td class="title indent text-align-left"><a href="detail?id=${n.id}">${n.title}</a></td>
+						<td>${n.writerId}</td>
+						<td>${n.regdate}</td>
+						<td>${n.hit}</td>
 					</tr>
 					<%} %>
+
 					</tbody>
 				</table>
 			</div>
@@ -271,9 +260,3 @@
         </footer>
     </body>
 </html>
-
-<%
-	rs.close();
-	st.close();
-	con.close();
-%>
