@@ -1,5 +1,7 @@
 package com.newlecture.web.controller;
 
+import com.newlecture.web.entity.Notice;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -34,13 +36,26 @@ public class NoticeDetailController extends HttpServlet {
             String files = rs.getString("FILES");
             String content = rs.getString("CONTENT");
 
+            Notice notice = new Notice(
+                    id,
+                    title,
+                    writerId,
+                    regdate,
+                    hit,
+                    files,
+                    content
+            );
+            request.setAttribute("n", notice);
+            // detail.jsp 에서 ${n.title} 식으로 사용할 때, n.title의 getter 메소드인 n.getTitle() 메소드를 호출하는 코드로 변환
+
+            /*
             request.setAttribute("title", title);
             request.setAttribute("writerId", writerId);
             request.setAttribute("regdate", regdate);
             request.setAttribute("hit", hit);
             request.setAttribute("files", files);
             request.setAttribute("content", content);
-
+            */
             rs.close();
             st.close();
             con.close();
