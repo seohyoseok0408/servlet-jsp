@@ -1,36 +1,7 @@
-<%@ page import="java.sql.*" %>
 <!DOCTYPE html>
 <html>
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 
-<%
-    int id = Integer.parseInt(request.getParameter("id"));
-%>
-
-<%
-    String url = "jdbc:oracle:thin:@192.168.219.106:1521/ORCLPDB";
-    String sql = "SELECT * FROM NOTICE WHERE ID=?";
-
-
-    Class.forName("oracle.jdbc.driver.OracleDriver");
-    Connection con = DriverManager.getConnection(url, "NEWLEC", "newlec");
-    PreparedStatement st = con.prepareStatement(sql); // 미리 준비
-    st.setInt(1, id);
-    ResultSet rs = st.executeQuery();
-
-    rs.next();
-
-    String title = rs.getString("TITLE");
-    String writerId = rs.getString("WRITER_ID");
-    Date regdate = rs.getDate("REGDATE");
-    int hit = rs.getInt("HIT");
-    String files = rs.getString("FILES");
-    String content = rs.getString("CONTENT");
-
-    rs.close();
-    st.close();
-    con.close();
-%>
 <head>
     <title>코딩 전문가를 만들기 위한 온라인 강의 시스템</title>
     <meta charset="UTF-8">
@@ -177,24 +148,24 @@
 							<tbody>
 								<tr>
 									<th>제목</th>
-									<td class="text-align-left text-indent text-strong text-orange" colspan="3"><%=title%></td>
+									<td class="text-align-left text-indent text-strong text-orange" colspan="3"><%=request.getAttribute("title")%></td>
 								</tr>
 								<tr>
 									<th>작성일</th>
-									<td class="text-align-left text-indent" colspan="3"><%=regdate%></td>
+									<td class="text-align-left text-indent" colspan="3"><%=request.getAttribute("regdate")%></td>
 								</tr>
 								<tr>
 									<th>작성자</th>
-									<td><%=writerId%></td>
+									<td><%=request.getAttribute("writerID")%></td>
 									<th>조회수</th>
-									<td><%=hit%></td>
+									<td><%=request.getAttribute("hit")%></td>
 								</tr>
 								<tr>
 									<th>첨부파일</th>
-									<td colspan="3"><%=files%></td>
+									<td colspan="3"><%=request.getAttribute("files")%></td>
 								</tr>
 								<tr class="content">
-									<td colspan="4"><%=content%></td>
+									<td colspan="4"><%=request.getAttribute("content")%></td>
 								</tr>
 							</tbody>
 						</table>
