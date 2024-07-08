@@ -132,17 +132,32 @@ jasper에게 일을 시키기 위해 만든 도구가 jsp.
 
 컨트롤로와 뷰가 `물리적으로 분리된` 방식
 
-<p align="center"><img width="700" alt="MVC Model2" src="https://github.com/seohyoseok0408/study/assets/73714589/f3350157-da11-4886-a418-e99548638374">
+<p align="center"><img width="700" alt="MVC Model2" src="https://github.com/seohyoseok0408/study/assets/73714589/5bb71ba6-2873-445b-a56e-bbe6ff368d76">
 
 - 장점
   - 실행속도 개선
-  - 유지관리 더 용이해짐
+    - Control은 자바코드밖에 없기 때문에 미리 컴파일 해놓을 수가 있기 때문이다.
+  - 복잡도는 높아지지만, 개별적으로 유지관리 용이
 
-View는 JSP로 돼있긴 하지만, 서블릿이다.  
-서블릿에서 서블릿으로 흐름을 이어받아서 코드를 진행할 때 사용되는게 포워딩이다. 컨트롤러는 Dispatch를 통해서 포워딩을 하게 된다.
+
+View는 JSP. JSP라는 결과물은 서블릿이기 때문에 결국 서블릿이 두개가 되는 셈이다. 그래서 Model을 지역변수의 형태로서 사용할 수 없게 된다. 
+서블릿과 서블릿을 이어줄 수 있는 방법이 필요.  
+가장 적합한 것은 request. 원래는 입력도구이나 저장소로도 사용이 가능. 
+
+
+서블릿에서 서블릿으로 흐름을 이어받아서 코드를 진행할 때 사용되는게 포워딩이다. 컨트롤러는 Dispatch를 통해서 포워딩을 하게 된다.  
+
+서블릿에서 서블릿으로 전이하는 방법은 2가지
+- redirect
+  - 서블릿 호출 시 아예 다른 페이지로 가버리는 방법
+  - ex) 로그인 페이지로 보내기, 목록 페이지로 보내기
+- forward
+  - request.getRequestDispatcher("/경로.jsp").forward(request, response);
+    - 현재 사용하고 있는 저장소 객체와, 출력 객체를 공유
 
 <p align="center"><img width="700" alt="MVC Model2" src="https://github.com/seohyoseok0408/study/assets/73714589/e675977a-7434-4e59-8f8d-10c35e83d85b">
 
+원래는 Controller가 많아져서 서블릿이 많아지지만,  
 Dispatcher를 하나만 둬서, 실질적으로 서블릿을 하나만 만든다. 일반적인 업무 로직 같은 경우는 별도의 POJO 클래스로, 서블릿 클래스가 아닌, 일반 클래스 형태이다.  
 사용자의 요청이 들어오면 Dispatcher가 사용자의 요청을 수반해서 적절한 컨트롤러를 찾아서 수행하게 하는 방식으로 진행된다.
 
