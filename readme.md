@@ -1,3 +1,8 @@
+# 서블릿
+### : 자바 웹 프로그램
+
+
+
 # WAS
 
 (Web Application Server)
@@ -204,3 +209,12 @@ WEB-INF : 사용자가 직접 요청할 수 없는 곳
 WEB-INF 폴더 안에 View 페이지에 대한 내용들을 옮겨 넣는다.  
 물론, Controller의 disparcher경로도 수정해줘야 한다.  
 `request.getRequestDispatcher("/WEB-INF/view/notice/list.jsp").forward(request, response);`
+
+## JSTL (JSP Standard Tag Library)
+- JSTP은 5개의 범주의 태그 라이브러리 제공
+- `Core, Formating, Functions, SQL, XML`
+- <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<p align="center"><img width="700" alt="JSTL Core" src="https://github.com/seohyoseok0408/study/assets/73714589/e8a92dd0-110e-4a02-b005-6b5ef6d54458">
+
+# 중간정리
+<p align="center"><img width="700" alt="summary" src="https://github.com/seohyoseok0408/study/assets/73714589/46cb4120-cb33-4139-9b8b-cb8e5e72b239">

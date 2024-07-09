@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
-
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <head>
     <title>코딩 전문가를 만들기 위한 온라인 강의 시스템</title>
     <meta charset="UTF-8">
@@ -152,17 +154,28 @@
 								</tr>
 								<tr>
 									<th>작성일</th>
-									<td class="text-align-left text-indent" colspan="3">${n.regdate}</td>
+									<td class="text-align-left text-indent" colspan="3"><fmt:formatDate pattern="yyyy-MM-dd hh:mm:ss" value="${n.regdate}"/></td>
 								</tr>
 								<tr>
 									<th>작성자</th>
 									<td>${n.writerId}</td>
 									<th>조회수</th>
-									<td>${n.hit}</td>
+									<td><fmt:formatNumber type="number" value="${n.hit}"/></td>
 								</tr>
 								<tr>
 									<th>첨부파일</th>
-									<td colspan="3">${n.files}</td>
+									<td colspan="3" style="text-align: left; text-indent: 10px">
+                                        <c:forTokens var="fileName" items="${n.files}" delims="," varStatus="st">
+                                            <c:set var="style" value="" />
+                                            <c:if test="${fn: endsWith(fileName, '.zip')}">
+                                                <c:set var="style" value="font-weight: bold; color:red"/>
+                                            </c:if>
+                                            <a href="${fileName}" style="${style}">${fn: toUpperCase(fileName)}</a>
+                                            <c:if test="${!st.last}">
+                                            /
+                                            </c:if>
+                                        </c:forTokens>
+                                    </td>
 								</tr>
 								<tr class="content">
 									<td colspan="4">${n.content}</td>
@@ -172,7 +185,7 @@
 					</div>
 					
 					<div class="margin-top text-align-center">
-						<a class="btn btn-list" href="list.html">목록</a>
+						<a class="btn btn-list" href="list">목록</a>
 					</div>
 					
 					<div class="margin-top">
