@@ -1,4 +1,4 @@
-# 서블릿
+~~# 서블릿
 ### : 자바 웹 프로그램
 
 
@@ -218,3 +218,23 @@ WEB-INF 폴더 안에 View 페이지에 대한 내용들을 옮겨 넣는다.
 
 # 중간정리
 <p align="center"><img width="700" alt="summary" src="https://github.com/seohyoseok0408/study/assets/73714589/46cb4120-cb33-4139-9b8b-cb8e5e72b239">
+
+# 기업형으로 레이어를 나누는 이유와 설명  
+<p align="center"><img width="700" alt="JSTL Core" src="https://github.com/seohyoseok0408/study/assets/73714589/a9e2ef98-43d7-46a8-bb0e-92c9d17ec67c">
+
+
+서블릿가지고도 충분히 만들 수 있지만, 
+jsp로 분리해서 Controller가 Model을 만들고 Model을 View에 소개하는 방식을 사용했다.
+위 방식은 문서를 출력하는 것에 대한 부담이 페이지 기반으로 만듦으로써 적다. 
+Servlet이 하는 일은 사용자의 응답을 처리하고 출력에 대한 내용을 jsp에게 위임하는 Contoller.   
+중간에 업무를 처리하는 부분도 지금까지 Servlet이 담당했지만, 이제 경험이 많은 사람이 업무 서비스를 맡고 
+사용자의 입출력 담당을 하는 사람이 Servlet을 맡는 방식. (분업이 잘됨)  
+Servlet : 입출력 담당 부분  
+업무 서비스 : 사용자가 요청하는 단위.(Ex.계좌이체)  
+데이터 서비스 : 실제로 데이터를 조작해주는 부분  
+필요에 따라 분리를 안해도 된다. 
+
+
+
+
+
