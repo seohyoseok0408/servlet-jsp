@@ -16,7 +16,36 @@ public class NoticeService {
         return 0;
     }
     public int insertNotice(Notice notice){
-        return 0;
+
+        int result = 0;
+
+
+        String sql = "INSERT INTO NOTICE(TITLE, CONTENT, WRITER_ID, PUB) VALUES (?, ?, ?, ?)";
+
+        String url = "jdbc:oracle:thin:@192.168.219.106:1521/ORCLPDB";
+
+        try {
+            Class.forName("oracle.jdbc.driver.OracleDriver");
+            Connection con = DriverManager.getConnection(url, "NEWLEC", "newlec");
+            PreparedStatement st = con.prepareStatement(sql);
+
+            st.setString(1, notice.getTitle());
+            st.setString(2, notice.getContent());
+            st.setString(3, notice.getWriterId());
+            st.setBoolean(4, notice.getPub());
+
+            result  = st.executeUpdate();
+
+            st.close();
+            con.close();
+
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        return result;
     }
 
     public int deleteNotice(int id){
@@ -74,6 +103,7 @@ public class NoticeService {
                 String files = rs.getString("FILES");
 //                String content = rs.getString("CONTENT");
                 int cmtCount = rs.getInt("CMT_COUNT");
+                boolean pub = rs.getBoolean("PUB");
 
                 NoticeView notice = new NoticeView(
                         id,
@@ -82,6 +112,7 @@ public class NoticeService {
                         regdate,
                         hit,
                         files,
+                        pub,
                         cmtCount
                 );
                 list.add(notice);
@@ -163,6 +194,7 @@ public class NoticeService {
                 int hit = rs.getInt("HIT");
                 String files = rs.getString("FILES");
                 String content = rs.getString("CONTENT");
+                boolean pub = rs.getBoolean("PUB");
 
                 notice = new Notice(
                         nid,
@@ -171,7 +203,8 @@ public class NoticeService {
                         regdate,
                         hit,
                         files,
-                        content
+                        content,
+                        pub
                 );
             }
 
@@ -218,6 +251,7 @@ public class NoticeService {
                 int hit = rs.getInt("HIT");
                 String files = rs.getString("FILES");
                 String content = rs.getString("CONTENT");
+                boolean pub = rs.getBoolean("PUB");
 
                 notice = new Notice(
                         nid,
@@ -226,7 +260,8 @@ public class NoticeService {
                         regdate,
                         hit,
                         files,
-                        content
+                        content,
+                        pub
                 );
             }
 
@@ -272,6 +307,7 @@ public class NoticeService {
                 int hit = rs.getInt("HIT");
                 String files = rs.getString("FILES");
                 String content = rs.getString("CONTENT");
+                boolean pub = rs.getBoolean("PUB");
 
                 notice = new Notice(
                         nid,
@@ -280,7 +316,8 @@ public class NoticeService {
                         regdate,
                         hit,
                         files,
-                        content
+                        content,
+                        pub
                 );
             }
 
@@ -318,7 +355,7 @@ public class NoticeService {
             Statement st = con.createStatement();
 
             result  = st.executeUpdate(sql);
-            
+
             st.close();
             con.close();
 
