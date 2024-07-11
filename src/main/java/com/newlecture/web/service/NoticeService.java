@@ -265,7 +265,7 @@ public class NoticeService {
 
             if (rs.next()){
                 int nid = rs.getInt("ID");
-                System.out.println(id);
+
                 String title = rs.getString("TITLE");
                 String writerId = rs.getString("WRITER_ID");
                 Date regdate = rs.getDate("REGDATE");
@@ -294,5 +294,40 @@ public class NoticeService {
             throw new RuntimeException(e);
         }
         return notice;
+    }
+
+    public int deleteNoticeAll(int[] ids) {
+        int result = 0;
+
+        String params = "";
+
+        for(int i=0; i<ids.length; i++) {
+            params += ids[i];
+
+            if(i < ids.length-1)
+                params += ",";
+        }
+
+        String sql = "DELETE NOTICE WHERE ID IN ("+params+")";
+
+        String url = "jdbc:oracle:thin:@192.168.219.106:1521/ORCLPDB";
+
+        try {
+            Class.forName("oracle.jdbc.driver.OracleDriver");
+            Connection con = DriverManager.getConnection(url, "NEWLEC", "newlec");
+            Statement st = con.createStatement();
+
+            result  = st.executeUpdate(sql);
+            
+            st.close();
+            con.close();
+
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        return result;
     }
 }

@@ -12,11 +12,33 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet("/admin/notice/list")
+@WebServlet("/admin/board/notice/list")
 public class ListController extends HttpServlet {
+
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        //list?f=title&q=a
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+       String[] openIds = request.getParameterValues("open-id");
+       String[] delIds = request.getParameterValues("del-id");
+       String cmd = request.getParameter("cmd");
+
+       switch (cmd){
+           case "일괄공개":
+               for(String openId : openIds)
+                   System.out.println(openId);
+               break;
+           case "일괄삭제":
+               NoticeService service = new NoticeService();
+               int[] ids = new int[delIds.length];
+               for(int i=0; i<delIds.length; i++)
+                   ids[i] = Integer.parseInt(delIds[i]);
+               service.deleteNoticeAll(ids);
+               break;
+       }
+       response.sendRedirect("list");
+    }
+
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {;
 
         String field_ = request.getParameter("f");
         String query_ = request.getParameter("q");
